@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Anton', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    position: relative;
+    font-size: 4rem;
+    color: gray;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+h2::before{
+    content: '';
+    position: absolute;
+    top: 48px;
+    height: 4px;
+    width: 505px;
+    background-color: red;
+    transition: 0.5s;
+    box-shadow: 0px 0px 5px red,
+    0px 0px 10px red,
+    0px 0px 30px red,
+    0px 0px 50px red;
+}
+
+h2:hover::before{
+    transform: scaleX(0);
+}
+
+h2 span{
+    position: absolute;
+}
+
+.newyear{
+    transform: translateY(-100%);
+    visibility: hidden;
+    transition: 400ms ease-in-out;
+    color: rgb(0, 255, 0);
+    filter: drop-shadow(0px 0px 10px rgb(0, 255, 0));
+}
+
+h2:hover .newyear{
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.currentyear{
+    color: red;
+    filter: drop-shadow(0px 0px 10px red);
+    transition: 400ms ease-in-out;
+}
+
+h2:hover .currentyear{
+    transform: translateY(100%);
+    visibility: hidden ;
+}
